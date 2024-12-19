@@ -59,14 +59,18 @@
     "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
+            "echo 'Auto load dumb running!'",
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
         "post-root-package-install": [
+            "echo 'Post package install running!'",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
+            "echo 'Post create project running!'",
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "custom": "echo 'This is a custom script!'"
     }
 }
